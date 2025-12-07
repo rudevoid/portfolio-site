@@ -1,0 +1,44 @@
+{
+  "name": "Роман — Инженер по внедрению технологий механообработки",
+  "short_name": "Roman Eng",
+  "description": "Сложная механообработка — предсказуемо. Запуск и оптимизация процессов проектно, без найма в штат. 15+ лет: Siemens NX (5-axis), Vericut, внедрение инструмента.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0c0f",
+  "theme_color": "#5e67e6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": [
+    "productivity",
+    "business"
+  ],
+  "lang": "ru",
+  "dir": "ltr",
+  "scope": "/",
+  "id": "./"
+}

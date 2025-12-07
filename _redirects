@@ -1,0 +1,33 @@
+# Cloudflare Pages / Netlify-style redirects
+/en      /en/      301
+/de      /de/      301
+/zh      /zh/      301
+/tr      /tr/      301
+/ar      /ar/      301
+/hi      /hi/      301
+/it      /it/      301
+
+/hr-short           /hr-short.html           301
+/en/hr-short        /en/hr-short.html        301
+/de/hr-short        /de/hr-short.html        301
+/zh/hr-short        /zh/hr-short.html        301
+/tr/hr-short        /tr/hr-short.html        301
+/ar/hr-short        /ar/hr-short.html        301
+/hi/hr-short        /hi/hr-short.html        301
+/it/hr-short        /it/hr-short.html        301
+
+# Pretty URLs (trailing slash)
+/expertise        /expertise/        301
+/roles            /roles/            301
+/industries       /industries/       301
+/cases            /cases/            301
+
+/industries/aero-energy             /industries/aero-energy/             301
+/industries/tooling-vendors         /industries/tooling-vendors/         301
+/industries/automation-integrators  /industries/automation-integrators/  301
+/industries/field-service           /industries/field-service/           301
+/industries/cam-plm                 /industries/cam-plm/                 301
+/industries/audit-risk              /industries/audit-risk/              301
+
+# 404 for everything else
+/*       /404.html  404

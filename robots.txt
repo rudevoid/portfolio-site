@@ -1,0 +1,9 @@
+# robots.txt
+# RU-only version. Language stubs are marked as noindex in HTML.
+
+User-agent: *
+Allow: /
+
+# Tip: if you set a real domain, you can add a sitemap line:
+# Sitemap: https://YOUR-DOMAIN/sitemap.xml
+Sitemap: https://example.invalid/sitemap.xml
