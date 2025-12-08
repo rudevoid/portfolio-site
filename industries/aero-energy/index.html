@@ -26,29 +26,39 @@
 <body id="top">
 <header class="top">
 <div class="nav">
-<a class="nav__brand" aria-label="На главную" href="../../index.html#top">
-<img class="nav__avatar" src="../../assets/asset-0.jpeg" alt="Роман" loading="eager" decoding="async"/>
+<a aria-label="Наверх" class="nav__brand" href="#top">
+<img alt="Роман" class="nav__avatar" decoding="async" loading="eager" src="assets/asset-0.jpeg"/>
 </a>
-<nav class="nav__links" aria-label="Навигация">
-<a href="../../index.html#services">Что делаю</a>
-<a href="../../cases/">Кейсы</a>
-<a href="../../expertise/">Экспертиза</a>
-<a href="/engagement/">Роли</a>
-<a class="is-active" href="../../industries/">Отрасли</a>
-<a href="../../index.html#contact">Контакты</a>
+<nav aria-label="Навигация" class="nav__links">
+<a href="/#services">Что делаю</a>
+<a href="/#cases">Кейсы</a>
+<a href="/#stack">Стек</a>
+<a href="/expertise/">Экспертиза</a>
+<a href="/engagement/">Форматы сотрудничества</a>
+<a href="/industries/">Отрасли</a>
+<a href="/cases/">Все кейсы</a>
+<a href="/#contact">Контакты</a>
 </nav>
 <div class="nav__right">
-<div class="lang" aria-label="Язык">
-<a class="lang__a is-active" aria-current="page" href="../../index.html">RU</a>
-<a class="lang__a" href="../../en/">EN</a>
-<a class="lang__a" href="../../zh/">中文</a>
-<a class="lang__a" href="../../de/">DE</a>
-<a class="lang__a" href="../../tr/">TR</a>
-<a class="lang__a" href="../../ar/">AR</a>
-<a class="lang__a" href="../../hi/">HI</a>
-<a class="lang__a" href="../../it/">IT</a>
-</div>
-<a class="nav__cta" href="../../index.html#contact">Связаться</a>
+  <div class="lang-switcher" aria-label="Выбор языка">
+    <button class="lang-current" type="button" aria-haspopup="true" aria-expanded="false">
+      <span class="lang-current__circle">
+        <span class="lang-current__code">RU</span>
+      </span>
+    </button>
+    <ul class="lang-menu" hidden><li><a class="is-active" href="/"><span>RU</span></a></li>
+<li><a href="/en/"><span>EN</span></a></li>
+<li><a href="/de/"><span>DE</span></a></li>
+<li><a href="/es/"><span>ES</span></a></li>
+<li><a href="/fr/"><span>FR</span></a></li>
+<li><a href="/it/"><span>IT</span></a></li>
+<li><a href="/tr/"><span>TR</span></a></li>
+<li><a href="/ar/"><span>AR</span></a></li>
+<li><a href="/zh/"><span>ZH</span></a></li>
+<li><a href="/ja/"><span>JA</span></a></li>
+<li><a href="/hi/"><span>HI</span></a></li></ul>
+  </div>
+  <a class="nav__cta" href="/#contact">Связаться</a>
 </div>
 </div>
 </header>
@@ -146,6 +156,6 @@
 <span>Made for Cloudflare Pages</span>
 </div>
 </footer>
-<script defer src="../../script.js"></script>
+<script defer src="../../script.js?v=2"></script>
 </body>
 </html>
