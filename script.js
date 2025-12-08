@@ -209,4 +209,71 @@ ${msg || '-'}
         });
     }
 
+
+    // Language switcher: highlight active language and toggle dropdown
+    (function () {
+        const menu = document.querySelector('.lang-menu');
+        const btn = document.querySelector('.lang-current');
+        const currentCodeEl = document.querySelector('.lang-current__code');
+        if (!menu || !btn || !currentCodeEl) return;
+
+        const knownLangs = ['en','de','es','fr','it','tr','ar','zh','ja','hi'];
+
+        function detectCurrentLang() {
+            const path = (window.location && window.location.pathname) || '/';
+            const trimmed = path.replace(/^\/+/,'').replace(/\/+$/,'');
+            if (!trimmed) return 'ru';
+            const first = trimmed.split('/')[0];
+            return knownLangs.includes(first) ? first : 'ru';
+        }
+
+        const currentLang = detectCurrentLang();
+
+        const items = Array.from(menu.querySelectorAll('a[href]'));
+        items.forEach(a => {
+            const href = a.getAttribute('href') || '';
+            let code = 'ru';
+            if (href === '/' || href === './') {
+                code = 'ru';
+            } else {
+                const m = href.match(/^\/([a-z]{2})\/$/i);
+                if (m) code = m[1].toLowerCase();
+            }
+            if (code === currentLang) {
+                a.classList.add('is-active');
+                currentCodeEl.textContent = code.toUpperCase() === 'RU' ? 'RU' : code.toUpperCase();
+            } else {
+                a.classList.remove('is-active');
+            }
+        });
+
+        function closeMenu() {
+            btn.setAttribute('aria-expanded', 'false');
+            menu.setAttribute('hidden', '');
+        }
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            if (expanded) {
+                closeMenu();
+            } else {
+                btn.setAttribute('aria-expanded', 'true');
+                menu.removeAttribute('hidden');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMenu();
+            }
+        });
+    })();
+    
 })();
