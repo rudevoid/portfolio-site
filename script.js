@@ -35,34 +35,36 @@
         langMenu = $('.lang-menu', langSwitcher);
 
         if (langBtn && langMenu) {
+            const openMenu = () => {
+                langSwitcher.classList.add('is-open');
+                langBtn.setAttribute('aria-expanded', 'true');
+            };
+            const closeMenu = () => {
+                langSwitcher.classList.remove('is-open');
+                langBtn.setAttribute('aria-expanded', 'false');
+            };
+            const isOpen = () => langSwitcher.classList.contains('is-open') || langBtn.getAttribute('aria-expanded') === 'true';
+
             langBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                const isHidden = langMenu.hasAttribute('hidden');
-                if (isHidden) {
-                    langMenu.removeAttribute('hidden');
-                    langBtn.setAttribute('aria-expanded', 'true');
-                } else {
-                    langMenu.setAttribute('hidden', '');
-                    langBtn.setAttribute('aria-expanded', 'false');
-                }
+                if (isOpen()) closeMenu();
+                else openMenu();
             });
 
+            // Close when clicking outside
             document.addEventListener('click', (e) => {
-                if (!langSwitcher.contains(e.target)) {
-                    if (!langMenu.hasAttribute('hidden')) {
-                        langMenu.setAttribute('hidden', '');
-                        langBtn.setAttribute('aria-expanded', 'false');
-                    }
-                }
+                if (!langSwitcher.contains(e.target)) closeMenu();
             });
 
+            // Close on Escape
             langBtn.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    if (!langMenu.hasAttribute('hidden')) {
-                        langMenu.setAttribute('hidden', '');
-                        langBtn.setAttribute('aria-expanded', 'false');
-                    }
-                }
+                if (e.key === 'Escape') closeMenu();
+            });
+
+            // Close after choosing a language
+            langMenu.addEventListener('click', (e) => {
+                const a = e.target && e.target.closest ? e.target.closest('a') : null;
+                if (a) closeMenu();
             });
         }
     }

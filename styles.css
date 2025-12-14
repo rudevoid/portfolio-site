@@ -232,6 +232,7 @@ section[id] {
 }
 
 .lang-menu {
+    display: none;
     position: absolute;
     top: 120%;
     right: 0;
@@ -265,6 +266,13 @@ section[id] {
 
 .lang-menu a.is-active {
     color: var(--accent2);
+}
+
+/* Language menu visibility: JS + CSS fallback */
+.lang-switcher.is-open .lang-menu,
+.lang-switcher:focus-within .lang-menu,
+.lang-switcher:hover .lang-menu {
+    display: block;
 }
 .nav__cta {
     padding: 10px 16px;

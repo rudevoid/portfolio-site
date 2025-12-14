@@ -1,121 +1,115 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html class="no-js" lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#0b0c0f" />
-  <link rel="manifest" href="../../manifest.json" />
-  <title>Оптимизация обработки ЧПУ: советы по улучшению — Блог</title>
-  <meta name="description" content="Статья в разработке. Если тема актуальна — напишите, и я пришлю материал / примеры." />
-
-  
-  <link rel="canonical" href="/blog/cnc-optimization-tips/" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="../../styles.css" />
-  <meta property="og:image" content="../../assets/asset-10.jpeg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="../../assets/asset-10.jpeg" />
-  <meta name="color-scheme" content="dark" />
-  <meta name="format-detection" content="telephone=no" />
-  <link rel="icon" href="../../assets/favicon.ico" />
-  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#0b0c0f" name="theme-color"/>
+<link href="../../manifest.json" rel="manifest"/>
+<title>Оптимизация обработки ЧПУ: советы по улучшению — Блог</title>
+<meta content="Статья в разработке. Если тема актуальна — напишите, и я пришлю материал / примеры." name="description"/>
+<link href="/blog/cnc-optimization-tips/" rel="canonical"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="../../styles.css" rel="stylesheet"/>
+<meta content="../../assets/asset-10.jpeg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="../../assets/asset-10.jpeg" name="twitter:image"/>
+<meta content="dark" name="color-scheme"/>
+<meta content="telephone=no" name="format-detection"/>
+<link href="../../assets/favicon.ico" rel="icon"/>
+<link href="../../assets/apple-touch-icon.png" rel="apple-touch-icon"/>
 </head>
 <body id="top">
-  <header class="top">
-  <div class="nav">
-    <a aria-label="На главную" class="nav__brand" href="../../">
-      <img alt="Роман" class="nav__avatar" decoding="async" loading="eager" src="../../assets/asset-0.jpeg"/>
-    </a>
-    <nav aria-label="Навигация" class="nav__links">
-      <a href="../../about/">Обо мне</a>
-      <a href="../../solutions/">Решения</a>
-      <a href="../../industries/">Отрасли</a>
-      <a href="../../expertise/">Экспертиза</a>
-      <a href="../../engagement/">Сотрудничество</a>
-      <a href="../../cases/">Кейсы</a>
-      <a href="../../blog/">Блог</a>
-      <a href="../../faq/">FAQ</a>
-      <a href="../../contact/">Контакты</a>
-    </nav>
-    <div class="nav__right">
-      <div class="lang-switcher" aria-label="Выбор языка">
-        <button class="lang-current" type="button" aria-haspopup="true" aria-expanded="false">
-          <span class="lang-current__circle">
-            <span class="lang-current__code">RU</span>
-          </span>
-        </button>
-        <ul class="lang-menu" hidden>
-      <li><a class="is-active" href="./">Русский</a></li>
-      <li><a href="../../en/">English</a></li>
-      <li><a href="../../de/">Deutsch</a></li>
-      <li><a href="../../es/">Español</a></li>
-      <li><a href="../../tr/">Türkçe</a></li>
-      <li><a href="../../ar/">العربية</a></li>
-      <li><a href="../../zh/">中文</a></li>
-      <li><a href="../../ja/">日本語</a></li>
-      <li><a href="../../hi/">हिन्दी</a></li>
-      <li><a href="../../it/">Italiano</a></li>
-        </ul>
-      </div>
-      <a class="nav__cta" href="../../contact/">Связаться</a>
-    </div>
-  </div>
+<header class="top">
+<div class="nav">
+<a aria-label="На главную" class="nav__brand" href="../../">
+<img alt="Роман" class="nav__avatar" decoding="async" loading="eager" src="../../assets/asset-0.jpeg"/>
+</a>
+<nav aria-label="Навигация" class="nav__links">
+<a href="../../about/">Обо мне</a>
+<a href="../../solutions/">Решения</a>
+<a href="../../industries/">Отрасли</a>
+<a href="../../expertise/">Экспертиза</a>
+<a href="../../engagement/">Сотрудничество</a>
+<a href="../../cases/">Кейсы</a>
+<a href="../../blog/">Блог</a>
+<a href="../../faq/">FAQ</a>
+<a href="../../contact/">Контакты</a>
+</nav>
+<div class="nav__right">
+<div aria-label="Выбор языка" class="lang-switcher">
+<button aria-expanded="false" aria-haspopup="true" class="lang-current" type="button">
+<span class="lang-current__circle">
+<span class="lang-current__code">RU</span>
+</span>
+</button>
+<ul class="lang-menu">
+<li><a class="is-active" href="./">Русский</a></li>
+<li><a href="../../en/">English</a></li>
+<li><a href="../../de/">Deutsch</a></li>
+<li><a href="../../es/">Español</a></li>
+<li><a href="../../tr/">Türkçe</a></li>
+<li><a href="../../ar/">العربية</a></li>
+<li><a href="../../zh/">中文</a></li>
+<li><a href="../../ja/">日本語</a></li>
+<li><a href="../../hi/">हिन्दी</a></li>
+<li><a href="../../it/">Italiano</a></li>
+</ul>
+</div>
+<a class="nav__cta" href="../../contact/">Связаться</a>
+</div>
+</div>
 </header>
-
-  <main class="main">
-    <section class="section">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow"><a class="link" href="/blog/">← Вернуться в блог</a></p>
-          <h1 class="h2">Оптимизация обработки ЧПУ: советы по улучшению</h1>
-          <p class="sub">Заглушка: страница статьи будет наполнена контентом. Хотите получить черновик/пример — напишите.</p>
-          <div class="actions u-mt-14">
-            <a class="btn" href="/#contact">Задать вопрос</a>
-            <a class="btn btn--outline" href="/cases/">Посмотреть кейсы</a>
-          </div>
-        </div>
-
-        <article class="card reveal u-mt-18">
-          <h2 class="h3">Что здесь будет</h2>
-          <ul class="list">
-            <li>Краткий контекст и типовые ошибки.</li>
-            <li>Пошаговая методика (как делаю на проектах).</li>
-            <li>Проверочные чек‑листы и примеры «до/после».</li>
-          </ul>
-          <p class="micro u-mt-10">Пока можно перейти на <a class="link" href="/contact/">страницу контактов</a> или оставить заявку на главной.</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div>
-        <div class="footer__label">Email:</div>
-        <div class="footer__value"><a href="mailto:roman@example.com">roman@example.com</a></div>
-      </div>
-      <div>
-        <div class="footer__label">Телефон:</div>
-        <div class="footer__value"><a href="tel:+70000000000">+7 000 000-00-00</a></div>
-      </div>
-      <div class="footer__social">
-        <div class="footer__label">Быстро:</div>
-        <div class="footer__icons">
-          <a aria-label="Описать задачу" href="/#contact">Задача</a>
-          <a aria-label="HR short" href="/hr-short.html">HR</a>
-          <a aria-label="Наверх" href="#top">↑</a>
-        </div>
-      </div>
-    </div>
-    <div class="container footer__bottom">
-      <span>© <span id="year"></span> Роман. All Rights Reserved</span>
-      <span>Made for Cloudflare Pages</span>
-    </div>
-  </footer>
-
-  <script defer src="../../script.js?v=2"></script>
+<main class="main">
+<section class="section">
+<div class="container">
+<div class="section__head reveal">
+<p class="eyebrow"><a class="link" href="/blog/">← Вернуться в блог</a></p>
+<h1 class="h2">Оптимизация обработки ЧПУ: советы по улучшению</h1>
+<p class="sub">Заглушка: страница статьи будет наполнена контентом. Хотите получить черновик/пример — напишите.</p>
+<div class="actions u-mt-14">
+<a class="btn" href="/#contact">Задать вопрос</a>
+<a class="btn btn--outline" href="/cases/">Посмотреть кейсы</a>
+</div>
+</div>
+<article class="card reveal u-mt-18">
+<h2 class="h3">Что здесь будет</h2>
+<ul class="list">
+<li>Краткий контекст и типовые ошибки.</li>
+<li>Пошаговая методика (как делаю на проектах).</li>
+<li>Проверочные чек‑листы и примеры «до/после».</li>
+</ul>
+<p class="micro u-mt-10">Пока можно перейти на <a class="link" href="/contact/">страницу контактов</a> или оставить заявку на главной.</p>
+</article>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container footer__grid">
+<div>
+<div class="footer__label">Email:</div>
+<div class="footer__value"><a href="mailto:roman@example.com">roman@example.com</a></div>
+</div>
+<div>
+<div class="footer__label">Телефон:</div>
+<div class="footer__value"><a href="tel:+70000000000">+7 000 000-00-00</a></div>
+</div>
+<div class="footer__social">
+<div class="footer__label">Быстро:</div>
+<div class="footer__icons">
+<a aria-label="Описать задачу" href="/#contact">Задача</a>
+<a aria-label="HR short" href="/hr-short.html">HR</a>
+<a aria-label="Наверх" href="#top">↑</a>
+</div>
+</div>
+</div>
+<div class="container footer__bottom">
+<span>© <span id="year"></span> Роман. All Rights Reserved</span>
+<span>Made for Cloudflare Pages</span>
+</div>
+</footer>
+<script defer="" src="../../script.js?v=2"></script>
 </body>
 </html>
