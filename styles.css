@@ -1310,3 +1310,14 @@ input:focus, select:focus, textarea:focus {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+/* Utilities (generated) */
+.u-mt-10{margin-top:10px}
+.u-mt-14{margin-top:14px}
+.u-mt-16{margin-top:16px}
+.u-mt-18{margin-top:18px}
+.u-mt-24{margin-top:24px}
+.u-p-2{padding:2rem}
+.u-mb-12{margin:0 0 12px 0}
+.u-mb-20-o90{margin:0 0 20px 0;opacity:.9}
+.u-flex-gap12-wrap{display:flex;gap:12px;flex-wrap:wrap}
+.u-input-dark{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:#0b0c0f;color:#fff}

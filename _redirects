@@ -18,7 +18,6 @@
 
 # Pretty URLs (trailing slash)
 /expertise        /expertise/        301
-/roles            /roles/            301
 /industries       /industries/       301
 /cases            /cases/            301
 

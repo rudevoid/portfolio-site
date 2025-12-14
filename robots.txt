@@ -6,4 +6,4 @@ Allow: /
 
 # Tip: if you set a real domain, you can add a sitemap line:
 # Sitemap: https://YOUR-DOMAIN/sitemap.xml
-Sitemap: https://example.invalid/sitemap.xml
+Sitemap: /sitemap.xml

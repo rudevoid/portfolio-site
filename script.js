@@ -9,6 +9,17 @@
     const $ = (s, r = document) => r.querySelector(s);
     const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
+    // Delegated actions (no inline JS)
+    document.addEventListener('click', (e) => {
+        const el = e.target && e.target.closest ? e.target.closest('[data-action]') : null;
+        if (!el) return;
+        const action = el.getAttribute('data-action');
+        if (action === 'reload') {
+            e.preventDefault();
+            location.reload();
+        }
+    });
+
     const header = $('.top');
     const availability = $('#availability');
     const bottomCta = $('#bottomCta');
